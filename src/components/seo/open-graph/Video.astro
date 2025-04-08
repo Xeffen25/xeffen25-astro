@@ -1,0 +1,13 @@
+---
+interface Props {
+	video: VideoOpenGraph;
+}
+const { video } = Astro.props;
+---
+
+<meta property="og:video" content={video.url} />
+{video.secureUrl && <meta property="og:video:secure_ur" content={video.secureUrl} />}
+{video.type && <meta property="og:video:type" content={video.type} />}
+{video.width && <meta property="og:video:width" content={video.width.toString()} />}
+{video.height && <meta property="og:video:height" content={video.height.toString()} />}
+<meta property="og:video:alt" content={video.alt} />

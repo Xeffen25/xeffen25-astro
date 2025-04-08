@@ -1,0 +1,28 @@
+---
+import Audio from "@/components/seo/open-graph/Audio.astro";
+import Image from "@/components/seo/open-graph/Image.astro";
+import Video from "@/components/seo/open-graph/Video.astro";
+import Article from "@/components/seo/open-graph/Article.astro";
+import Profile from "@/components/seo/open-graph/Profile.astro";
+
+type Props = SeoPage;
+const props = Astro.props;
+---
+
+<meta property="og:type" content={props.og?.type ? props.og.type : "website"} />
+<meta property="og:title" content={props.og?.title ? props.og.title : props.title} />
+<meta property="og:description" content={props.og?.description ? props.og.description : props.description} />
+<meta property="og:url" content={props.canonical ? props.canonical : new URL(Astro.url.pathname, Astro.site)} />
+{props.og?.determiner && <meta property="og:determiner" content={props.og.determiner} />}
+<meta property="og:locale" content={props.og?.locale ? props.og.locale : Astro.currentLocale} />
+{
+	props.og?.localeAlternate &&
+		props.og?.localeAlternate.forEach((alternate) => <meta property="og:locale:alternate" content={alternate} />)
+}
+<meta property="og:site_name" content={Astro.locals.runtime.env.SITE_NAME} />
+
+{props.og?.audio && <Audio audio={props.og.audio} />}
+{props.og?.image && <Image image={props.og.image} />}
+{props.og?.video && <Video video={props.og.video} />}
+{props.og?.type == "article" && <Article {...props.og.article} />}
+{props.og?.type == "profile" && <Profile {...props.og.profile} />}

@@ -1,0 +1,20 @@
+---
+import Favicons from "@/components/seo/Favicons.astro";
+import OpenGraph from "@/components/seo/OpenGraph.astro";
+import TwitterCard from "@/components/seo/TwitterCard.astro";
+import { Schema } from "astro-seo-schema";
+
+type Props = SeoPage;
+const props = Astro.props;
+---
+
+<Favicons />
+<link rel="manifest" href="/site.webmanifest" crossorigin="anonymous" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="robots" content={props.robots ? props.robots : "index, follow"} />
+<link rel="canonical" href={props.canonical ? props.canonical : new URL(Astro.url.pathname, Astro.site)} />
+<meta name="description" content={props.description} />
+<meta name="theme-color" content="#CC0000" />
+<OpenGraph {...props} />
+<TwitterCard {...props} />
+{props.schema && <Schema {...props.schema} />}

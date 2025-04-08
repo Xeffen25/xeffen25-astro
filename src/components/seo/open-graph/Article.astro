@@ -1,0 +1,21 @@
+---
+type Props = ArticleOpenGraph;
+const article = Astro.props;
+---
+
+{article.publishedTime && <meta property="article:published_time" content={article.publishedTime} />}
+{article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+{article.expirationTime && <meta property="article:expiration_time" content={article.expirationTime} />}
+{
+	article.author &&
+		article.author.map((author) => (
+			<>
+				{author.firstName && <meta property="article:author:first_name" content={author.firstName} />}
+				{author.lastName && <meta property="article:author:last_name" content={author.lastName} />}
+				{author.username && <meta property="article:author:username" content={author.username} />}
+				{author.gender && <meta property="article:author:gender" content={author.gender} />}
+			</>
+		))
+}
+{article.section && <meta property="article:section" content={article.section} />}
+{article.tag && article.tag.map((tag) => <meta property="article:tag" content={tag} />)}

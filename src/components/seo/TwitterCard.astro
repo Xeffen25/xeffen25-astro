@@ -1,0 +1,36 @@
+---
+type Props = SeoPage;
+const props = Astro.props;
+const twitter = props.twitter;
+---
+
+<meta name="twitter:card" content={twitter?.twitterCard ? twitter?.twitterCard : "summary_large_image"} />
+
+{twitter?.site?.username && <meta name="twitter:site" content={twitter.site.username} />}
+{twitter?.site?.id && <meta name="twitter:site:id" content={twitter.site.id} />}
+
+{twitter?.creator?.username && <meta name="twitter:creator" content={twitter.creator.username} />}
+{twitter?.creator?.id && <meta name="twitter:creator:id" content={twitter.creator.id} />}
+
+{twitter?.title && <meta name="twitter:title" content={twitter.title} />}
+{twitter?.description && <meta name="twitter:description" content={twitter.description} />}
+
+{twitter?.image?.url && <meta name="twitter:image" content={twitter.image.url} />}
+{twitter?.image?.alt && <meta name="twitter:image:alt" content={twitter.image.alt} />}
+
+{twitter?.player?.url && <meta name="twitter:player" content={twitter.player.url} />}
+{twitter?.player?.width && <meta name="twitter:player:width" content={twitter.player.width} />}
+{twitter?.player?.height && <meta name="twitter:player:height" content={twitter.player.height} />}
+{twitter?.player?.stream && <meta name="twitter:player:stream" content={twitter.player.stream} />}
+
+{twitter?.app?.iphone?.name && <meta name="twitter:app:name:iphone" content={twitter.app.iphone.name} />}
+{twitter?.app?.iphone?.id && <meta name="twitter:app:id:iphone" content={twitter.app.iphone.id} />}
+{twitter?.app?.iphone?.url && <meta name="twitter:app:url:iphone" content={twitter.app.iphone.url} />}
+
+{twitter?.app?.ipad?.name && <meta name="twitter:app:name:ipad" content={twitter.app.ipad.name} />}
+{twitter?.app?.ipad?.id && <meta name="twitter:app:id:ipad" content={twitter.app.ipad.id} />}
+{twitter?.app?.ipad?.url && <meta name="twitter:app:url:ipad" content={twitter.app.ipad.url} />}
+
+{twitter?.app?.googleplay?.name && <meta name="twitter:app:name:googleplay" content={twitter.app.googleplay.name} />}
+{twitter?.app?.googleplay?.id && <meta name="twitter:app:id:googleplay" content={twitter.app.googleplay.id} />}
+{twitter?.app?.googleplay?.url && <meta name="twitter:app:url:googleplay" content={twitter.app.googleplay.url} />}

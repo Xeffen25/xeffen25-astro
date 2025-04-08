@@ -1,0 +1,81 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Index" description="Description of the page">
+	<div class="flex min-h-[100dvh] flex-col content-between bg-neutral-900 py-8 font-sans text-neutral-200">
+		<main class="container mx-auto flex-grow px-6">
+			<section class="mb-16 text-center">
+				<h1 class="mt-12 mb-6 text-5xl font-bold text-white">Eminence Astro Theme</h1>
+				<p class="mx-auto max-w-2xl text-xl leading-relaxed text-gray-400">
+					A better starting point for your next Astro project deployed on Cloudflare. This theme provides a
+					streamlined development experience with Tailwind CSS, Cloudflare Workers integration, and built-in
+					SEO optimizations.
+				</p>
+			</section>
+
+			<section class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+				<div class="rounded-xl bg-gray-800 p-6 shadow-md">
+					<h2 class="mb-4 text-2xl font-semibold text-white">Wiki & GitHub</h2>
+					<p class="mb-6 text-gray-400">
+						Explore the project's wiki and repository for detailed information and updates.
+					</p>
+					<a
+						href="https://github.com/Xeffen25/eminence-astro-theme-cloudflare-pages/wiki"
+						class="mb-2 block rounded-lg bg-red-700 px-6 py-3 font-bold text-white hover:bg-red-800"
+					>
+						Wiki
+					</a>
+					<a
+						href="https://github.com/Xeffen25/eminence-astro-theme-cloudflare-pages"
+						class="block rounded-lg bg-gray-700 px-6 py-3 font-bold text-white hover:bg-gray-600"
+					>
+						GitHub
+					</a>
+				</div>
+
+				<div class="rounded-xl bg-gray-800 p-6 shadow-md">
+					<h2 class="mb-4 text-2xl font-semibold text-white">Cloudflare Docs</h2>
+					<p class="mb-6 text-gray-400">
+						Learn how to leverage Cloudflare's edge capabilities for optimized deployment.
+					</p>
+					<a
+						href="https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/"
+						class="block rounded-lg bg-red-700 px-6 py-3 font-bold text-white hover:bg-red-800"
+					>
+						Documentation
+					</a>
+				</div>
+
+				<div class="rounded-xl bg-gray-800 p-6 shadow-md">
+					<h2 class="mb-4 text-2xl font-semibold text-white">Astro Docs</h2>
+					<p class="mb-6 text-gray-400">
+						Master the Astro framework for building fast, content-focused websites.
+					</p>
+					<a
+						href="https://docs.astro.build/en/guides/integrations-guide/cloudflare/"
+						class="block rounded-lg bg-red-700 px-6 py-3 font-bold text-white hover:bg-red-800"
+					>
+						Documentation
+					</a>
+				</div>
+
+				<div class="rounded-xl bg-gray-800 p-6 shadow-md">
+					<h2 class="mb-4 text-2xl font-semibold text-white">Tailwind Docs</h2>
+					<p class="mb-6 text-gray-400">
+						Utilize Tailwind CSS for rapid UI development with utility-first classes.
+					</p>
+					<a
+						href="https://tailwindcss.com/docs/installation/using-vite"
+						class="block rounded-lg bg-red-700 px-6 py-3 font-bold text-white hover:bg-red-800"
+					>
+						Documentation
+					</a>
+				</div>
+			</section>
+		</main>
+		<footer class="border-t border-gray-700 pt-8 text-center">
+			<p>Developed by <a href="https://xeffen25.com" class="text-red-400 hover:underline">Xeffen25</a></p>
+		</footer>
+	</div>
+</Layout>

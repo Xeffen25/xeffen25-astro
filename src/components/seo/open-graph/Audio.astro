@@ -1,0 +1,10 @@
+---
+interface Props {
+	audio: AudioOpenGraph;
+}
+const { audio } = Astro.props;
+---
+
+<meta property="og:audio" content={audio.url} />
+{audio.secureUrl && <meta property="og:audio:secure_ur" content={audio.secureUrl} />}
+{audio.type && <meta property="og:audio:type" content={audio.type} />}

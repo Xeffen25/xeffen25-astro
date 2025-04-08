@@ -1,0 +1,28 @@
+---
+import "@/styles/global.css";
+
+// Components:
+import Seo from "@/components/seo/Seo.astro";
+import SkipToMain from "@/components/util/SkipToMain.astro";
+
+type Props = SeoPage;
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{Astro.props.title}</title>
+		<slot name="head" />
+		<Seo {...Astro.props} />
+	</head>
+	<body>
+		<slot name="body-start" />
+		<SkipToMain />
+		<main id="main" role="main" tabindex="-1">
+			<slot />
+		</main>
+		<slot name="body-end" />
+	</body>
+</html>

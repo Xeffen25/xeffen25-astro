@@ -1,0 +1,13 @@
+---
+interface Props {
+	image: ImageOpenGraph;
+}
+const { image } = Astro.props;
+---
+
+<meta property="og:image" content={image.url} />
+{image.secureUrl && <meta property="og:image:secure_ur" content={image.secureUrl} />}
+{image.type && <meta property="og:image:type" content={image.type} />}
+{image.width && <meta property="og:image:width" content={image.width.toString()} />}
+{image.height && <meta property="og:image:height" content={image.height.toString()} />}
+<meta property="og:image:alt" content={image.alt} />

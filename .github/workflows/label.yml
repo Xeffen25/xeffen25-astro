@@ -1,0 +1,22 @@
+name: Manage Labels
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+        paths:
+            - .github/labels.json
+jobs:
+    manage_labels:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            issues: write
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Run Eminence Label Manager
+              uses: Xeffen25/eminence-label-manager@2.2
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
